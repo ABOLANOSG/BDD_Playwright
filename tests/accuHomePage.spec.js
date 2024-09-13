@@ -21,4 +21,5 @@ test('Interactions in Accuweather home page', async ({browser}) => {
     console.log(resultText);
     await expect(resultText, 'The result founded does not match').toContain(stringsData.expectedH1);
     await resultSearch.backToHome();
-})
+    await expect(page, 'title does not match').toHaveTitle('Local, National, & Global Daily Weather Forecast | AccuWeather');
+});
